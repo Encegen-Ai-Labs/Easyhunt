@@ -1,0 +1,125 @@
+#########################################################
+
+# EASYHUNT FULL STACK GITIGNORE
+
+# React (Vite) + Flask + SQLite + Uploads
+
+#########################################################
+
+############################
+
+# ENV FILES (SECRET KEYS)
+
+############################
+# .env
+# .env.*
+# frontend/.env
+# backend/.env
+
+############################
+
+# SQLITE DATABASE  🚨 IMPORTANT
+
+############################
+# *.db
+# *.sqlite
+# *.sqlite3
+# backend/database.db
+# backend/app.db
+# backend/easyhunt.db
+# instance/*.db
+
+############################
+
+# UPLOADED USER FILES 🚨 VERY IMPORTANT
+
+############################
+uploads/
+backend/uploads/
+storage/
+media/
+*.xls
+*.xlsx
+*.csv
+
+############################
+
+# PYTHON / FLASK
+
+############################
+**pycache**/
+*.pyc
+*.pyo
+*.pyd
+*.log
+
+# virtual environments
+
+venv/
+.venv/
+env/
+backend/venv/
+backend/.venv/
+
+# flask cache
+
+.pytest_cache/
+.mypy_cache/
+coverage/
+htmlcov/
+
+############################
+
+# NODE / REACT (VITE)
+
+############################
+node_modules/
+frontend/node_modules/
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+############################
+
+# BUILD FILES
+
+############################
+dist/
+build/
+frontend/dist/
+frontend/build/
+.vite/
+
+############################
+
+# IDE / EDITOR
+
+############################
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+############################
+
+# OS FILES
+
+############################
+.DS_Store
+Thumbs.db
+desktop.ini
+
+############################
+
+# TEMP
+
+############################
+*.bak
+*.swp
+*.tmp
+*.temp
+#########################################################

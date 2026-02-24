@@ -1,0 +1,443 @@
+
+/* =========================================================
+PAGE + LAYOUT (FIXES SIDEBAR OVERFLOW)
+========================================================= */
+
+.search-page-wrapper{
+width:100%;
+display:flex;
+justify-content:center;
+}
+
+.main-area{
+flex:1;
+min-width:0; /* 🔥 MOST IMPORTANT (sidebar bug fix) */
+overflow:hidden;
+}
+
+.search-container{
+width:100%;
+background:#f5f7fb;
+padding:18px 24px;
+min-height:100%;
+display:flex;
+flex-direction:column;
+font-family:"Segoe UI", Arial, sans-serif;
+}
+
+/* =========================================================
+HEADER
+========================================================= */
+
+.search-header{
+text-align:left;
+padding:0 4px 18px 4px;
+color:#111;
+}
+
+.search-header h2{
+font-size:28px;
+font-weight:700;
+margin:0;
+}
+
+.search-header p{
+color:#6b7280;
+margin-top:4px;
+}
+
+/* =========================================================
+GRID FORM (FINAL FIXED GRID)
+========================================================= */
+
+.search-box{
+background:#ffffff;
+width:100%;
+margin:0;
+padding:24px;
+border-radius:14px;
+border:1px solid #e5e7eb;
+box-shadow:0 8px 24px rgba(0,0,0,.06);
+
+display:grid;
+grid-template-columns:repeat(5,1fr);
+gap:18px;
+}
+
+/* 🔥 CRITICAL GRID FIX (prevents overflow) */
+.search-box > *{ min-width:0; }
+
+.form-group{
+display:flex;
+flex-direction:column;
+gap:6px;
+min-width:0;
+}
+
+.form-group label{
+font-size:13px;
+font-weight:600;
+color:#374151;
+}
+
+/* inputs */
+.form-group input,
+.form-group select{
+width:100%;
+min-width:0;
+box-sizing:border-box;
+height:42px;
+padding:0 14px;
+font-size:14px;
+border-radius:10px;
+border:1px solid #d1d5db;
+outline:none;
+background:#fff;
+transition:.2s;
+}
+
+.form-group input:focus,
+.form-group select:focus{
+border-color:#3b82f6;
+box-shadow:0 0 0 3px rgba(59,130,246,.15);
+}
+
+/* remove large select arrow spacing */
+.form-group select{
+appearance:none;
+-webkit-appearance:none;
+-moz-appearance:none;
+}
+
+/* =========================================================
+GRID ROW STRUCTURE
+========================================================= */
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 👈 1,1,1 */
+  gap: 20px;
+}
+
+/* ================= ROW 1 ================= */
+/* Select Table | Table Name | Free Text | (empty) | (empty) */
+.f1 { grid-column: 1; }
+.f2 { grid-column: 2; }
+.f3 { grid-column: 3; }
+
+/* ================= ROW 2 ================= */
+/* Property | Purchaser | Seller | Document Name | Document No */
+.f4 { grid-column: 1; grid-row: 2; }   /* Property Description */
+.f5 { grid-column: 2; grid-row: 2; }   /* Purchaser Name */
+.f6 { grid-column: 3; grid-row: 2; }   /* Seller Name */
+.f7 { grid-column: 4; grid-row: 2; }   /* Document Name */
+.f8 { grid-column: 5; grid-row: 2; }   /* Document Number */
+
+/* ================= ROW 3 ================= */
+/* Registration | Search | Clear */
+.f9 { grid-column: 1; grid-row: 3; }
+/* =========================================================
+FREE TEXT MIC BUTTON
+========================================================= */
+
+.input-with-btn{
+position:relative;
+width:100%;
+}
+
+.input-with-btn input{
+padding-right:48px;
+}
+
+.mic-btn{
+position:absolute;
+right:6px;
+top:50%;
+transform:translateY(-50%);
+height:32px;
+width:32px;
+border-radius:50%;
+border:none;
+background:#eef2ff;
+color:#4338ca;
+cursor:pointer;
+}
+.select-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.select-wrapper select {
+  width: 100%;
+  padding: 10px 40px 10px 10px;
+  appearance: none;          /* Remove default arrow */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.dropdown-icon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;      /* So select still works */
+  font-size: 14px;
+  color: #555;
+}
+.summary-toggle {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.summary-toggle button {
+  background: none;
+  border: none;
+  color: #007bff;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 4px 8px;
+}
+
+.summary-toggle button:hover {
+  text-decoration: underline;
+}
+
+/* =========================================================
+BUTTONS
+========================================================= */
+
+/* === BUTTONS INLINE WITH REGISTRATION DATE === */
+
+.search-actions{
+  display: contents;
+}
+
+/* Search button */
+.search-btn{
+  grid-column: 2;
+  grid-row: 3;
+  align-self: end;
+  width: 140px;
+  height: 42px;
+  border-radius: 10px;
+  border: none;
+  font-size: 15px;
+  font-weight: 600;
+  background: #3b82f6;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Clear button */
+.clear-btn{
+  grid-column: 3;
+  grid-row: 3;
+  align-self: end;
+  width: 140px;
+  height: 42px;
+  border-radius: 10px;
+  border: none;
+  font-size: 15px;
+  font-weight: 600;
+  background: #f63b44;
+  color: #fff;
+  cursor: pointer;
+}
+.search-btn:hover{
+  background:#2563eb;
+}
+.clear-btn:hover{
+   background:#8592ae;
+}
+
+/* =========================================================
+   SEARCHED KEYWORDS
+========================================================= */
+.searched-keywords-wrapper{
+  margin-top:18px;
+}
+
+.searched-keywords-box{
+  background:#1f1b36;
+  color:#fff;
+  border-radius:14px;
+  padding:20px;
+  text-align:center;
+}
+
+/* =========================================================
+   DOCUMENT SUMMARY PANEL
+========================================================= */
+.group-summary{
+  background:#241f3d;
+  border-radius:16px;
+  padding:26px 24px 60px 24px;
+  margin-top:26px;
+  position:relative;
+}
+
+.group-summary h3{
+  color:#fff;
+  text-align:center;
+  margin-bottom:20px;
+  font-size:20px;
+}
+
+/* grid 4 columns */
+.group-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:14px;
+  max-height:170px;
+  overflow:hidden;
+  transition:max-height .35s ease;
+}
+
+.group-grid.expanded{
+  max-height:1000px;
+}
+
+/* summary cards */
+.group-item{
+  background:#3a375e;
+  color:#fff;
+  padding:12px 10px;
+  border-radius:8px;
+  font-size:14px;
+  cursor:pointer;
+  text-align:center;
+  transition:.25s;
+}
+
+.group-item:hover{
+  background:#4f46e5;
+  transform:translateY(-2px);
+}
+
+.group-item.active{
+  background:#facc15;
+  color:#000;
+  font-weight:600;
+}
+
+/* expand button */
+.summary-expand{
+  position:absolute;
+  left:50%;
+  bottom:12px;
+  transform:translateX(-50%);
+}
+
+.summary-expand-btn{
+  width:38px;
+  height:38px;
+  border-radius:50%;
+  border:none;
+  background:#ffffff;
+  font-size:18px;
+  cursor:pointer;
+  box-shadow:0 6px 16px rgba(0,0,0,.25);
+}
+
+/* =========================================================
+   RESULTS TABLE
+========================================================= */
+.results-area{
+  background:#fff;
+  padding:18px;
+  border-radius:14px;
+  box-shadow:0 8px 24px rgba(0,0,0,.06);
+  margin-top:20px;
+  overflow:auto;
+}
+
+/* sticky result count */
+.status{
+  font-weight:600;
+  margin-bottom:10px;
+  text-align:center;
+}
+
+/* table */
+.results-table{
+  width:100%;
+  border-collapse:collapse;
+  table-layout:fixed;
+  font-size:14px;
+}
+
+.results-table thead{
+  background:#111;
+  color:#fff;
+}
+
+.results-table th,
+.results-table td{
+  border:1px solid #ddd;
+  padding:8px;
+  word-break:break-word;
+  vertical-align:top;
+}
+
+.results-table tr:nth-child(even){
+  background:#f8fafc;
+}
+
+/* saved row */
+.row-selected{
+  background:#dad6ac !important;
+  opacity: 95%;
+}
+
+/* =========================================================
+   PAGINATION
+========================================================= */
+.pagination-controls{
+  position:fixed;
+  bottom:10px;
+  left:50%;
+  transform:translateX(-50%);
+  background:#e5e7eb;
+  padding:8px 12px;
+  border-radius:12px;
+  display:flex;
+  gap:8px;
+}
+
+.pagination-controls button{
+  border:none;
+  padding:6px 10px;
+  border-radius:8px;
+  background:#fff;
+  cursor:pointer;
+}
+
+/* =========================================================
+   BACK TO TOP
+========================================================= */
+.top-btn{
+  position:fixed;
+  right:30px;
+  bottom:60px;
+  border:none;
+  background:#3b82f6;
+  color:#fff;
+  padding:10px 12px;
+  border-radius:50%;
+  cursor:pointer;
+}
+@media(max-width:1200px){
+  .search-box{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .f1,.f2,.f3,.f4,.f5,.f6,.f7,.f8,.f9{
+    grid-column:span 2 !important;
+  }
+
+  .search-actions{
+    justify-content:center;
+  }
+}

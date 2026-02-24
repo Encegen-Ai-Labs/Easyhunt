@@ -1,0 +1,160 @@
+/* SIDEBAR BASE */
+.sidebar {
+  width: 250px;
+  height: 100vh;
+  background: #ffffff;
+  border-right: 1px solid #e5e7eb;
+  display: flex;
+  flex-direction: column;
+  padding: 18px 14px;
+  transition: width 0.25s ease;
+}
+
+/* COLLAPSED */
+.sidebar.collapsed {
+  width: 78px;
+}
+/* sidebar responsive fix */
+.sidebar.collapsed + .main-area .search-container{
+  max-width:1600px;
+}
+
+.sidebar + .main-area .search-container{
+  max-width:1350px;
+}
+/* TOP */
+.sidebar-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+}
+
+/* TOGGLE */
+.collapse-btn {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 22px;
+  color: #6b7280;
+}
+.sidebar {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-links {
+  flex: 1;   /* 👈 takes remaining space */
+}
+
+.help-btn,
+.logout-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 15px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+
+.logout-btn {
+  color: red;
+}
+/* LINKS */
+.sidebar-links {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.sidebar-links a {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 11px 12px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: #4b5563;
+  font-size: 14.5px;
+  font-weight: 500;
+  transition: 0.18s;
+}
+
+.sidebar-links a svg {
+  font-size: 20px;
+}
+
+/* ACTIVE */
+.sidebar-links .active {
+  background: #eef2ff;
+  color: #4f46e5;
+  font-weight: 600;
+}
+
+/* HOVER */
+.sidebar-links a:hover {
+  background: #f3f4f6;
+}
+
+/* BOTTOM SECTION */
+.sidebar-bottom {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding-top: 18px;
+  border-top: 1px solid #f1f5f9;
+}
+
+.sidebar-bottom a,
+.logout-btn {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 11px 12px;
+  border-radius: 10px;
+  color: #4b5563;
+  font-size: 14.5px;
+  text-decoration: none;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.logout-btn {
+  color: #dc2626;
+}
+
+.logout-btn:hover {
+  background: #fee2e2;
+}
+
+/* COLLAPSED MODE */
+.sidebar.collapsed span {
+  display: none;
+}
+
+.sidebar.collapsed .logo {
+  display: none;
+}
+
+.sidebar.collapsed .sidebar-links a,
+.sidebar.collapsed .sidebar-bottom a,
+.sidebar.collapsed .logout-btn {
+  justify-content: center;
+}
+.main-content {
+  flex: 1;
+  padding: 28px 32px;
+  transition: margin-left 0.25s ease;
+}

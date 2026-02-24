@@ -1,0 +1,133 @@
+/* MAIN APP */
+.app-layout {
+  display: flex;
+  height: 100vh;
+  background: #f8fafc;
+}
+
+/* RIGHT SIDE AREA */
+.page-area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* SCROLLABLE CONTENT */
+.page-scroll {
+  flex: 1;
+  overflow-y: auto;
+  padding: 28px 32px 120px 32px; /* space for footer */
+}
+
+/* CTA FOOTER (GLOBAL) */
+.cta-footer {
+  position: sticky;
+  bottom: 0;
+  background: #ffffff;
+  border-top: 1px solid #e5e7eb;
+  padding: 18px 28px;
+  display: flex;
+  justify-content: flex-end;
+  z-index: 10;
+}
+
+/* BUTTON CONTAINER */
+.cta-actions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+/* CTA BUTTON STYLE */
+.back-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #2563eb;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-size: 14.5px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.18s;
+}
+
+.back-btn:hover {
+  background: #1d4ed8;
+}
+/* GLOBAL FOOTER BAR */
+.global-footer{
+  height:70px;
+  background:white;
+  border-top:1px solid #e5e7eb;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 24px;
+  position:sticky;
+  bottom:0;
+  z-index:20;
+}
+
+/* container */
+.footer-actions{
+  width:100%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+/* right section buttons */
+.footer-right{
+  display:flex;
+  gap:12px;
+}
+
+/* copy */
+.footer-copy{
+  background:white;
+  border:1px solid #d1d5db;
+  color:#374151;
+  padding:10px 18px;
+  border-radius:10px;
+  font-weight:600;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  transition:.2s;
+}
+
+.footer-copy:hover:not(:disabled){
+  background:#eef2ff;
+}
+
+.footer-copy:disabled{
+  opacity:.45;
+  cursor:not-allowed;
+}
+
+/* word */
+.footer-word{
+  background:#1d4ed8;
+  color:white;
+  border:none;
+  padding:10px 20px;
+  border-radius:10px;
+  font-weight:600;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  transition:.2s;
+}
+
+.footer-word:hover:not(:disabled){
+  background:#1e40af;
+}
+
+.footer-word:disabled{
+  background:#93c5fd;
+  cursor:not-allowed;
+}
