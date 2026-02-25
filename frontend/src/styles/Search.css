@@ -350,9 +350,10 @@ BUTTONS
   border-radius:14px;
   box-shadow:0 8px 24px rgba(0,0,0,.06);
   margin-top:20px;
-  overflow:auto;
-}
 
+
+  overflow-y:auto;
+}
 /* sticky result count */
 .status{
   font-weight:600;
@@ -364,8 +365,8 @@ BUTTONS
 .results-table{
   width:100%;
   border-collapse:collapse;
-  table-layout:fixed;
-  font-size:14px;
+  table-layout:auto; /* IMPORTANT */
+  font-size:16px;
 }
 
 .results-table thead{
@@ -376,14 +377,64 @@ BUTTONS
 .results-table th,
 .results-table td{
   border:1px solid #ddd;
-  padding:8px;
-  word-break:break-word;
+  padding:8px 10px;
   vertical-align:top;
+
+  white-space:normal;          /* allow wrapping */
+  word-break:keep-all;         /* never break words */
+   /* wrap only at spaces */
+  line-height:1.4;
 }
 
 .results-table tr:nth-child(even){
   background:#f8fafc;
 }
+
+.results-table thead th{
+  position:sticky;
+  top:-21px;
+  background:#111;
+  color:#fff;
+  z-index:10;
+}
+
+/* small columns */
+.results-table th:nth-child(1),
+.results-table td:nth-child(1){ width:6%; }   /* Doc No */
+
+.results-table th:nth-child(3),
+.results-table td:nth-child(3){ width:8%; }   /* Date */
+
+.results-table th:nth-child(8),
+.results-table td:nth-child(8){ width:4%; }   /* Area */
+
+.results-table th:nth-child(9),
+.results-table td:nth-child(9){ width:4%; }   /* Amount */
+
+/* medium */
+.results-table th:nth-child(4),
+.results-table td:nth-child(4){ width:6%; }  /* SRO */
+
+/* large text columns */
+/* Seller */
+.results-table th:nth-child(5),
+.results-table td:nth-child(5){
+  width:26%;
+  max-width:180px;
+   word-break:break-word;
+}
+
+/* Purchaser */
+.results-table th:nth-child(6),
+.results-table td:nth-child(6){
+  width:26%;
+  max-width:280px;
+  word-break:break-word;
+}
+
+/* biggest column */
+.results-table th:nth-child(7),
+.results-table td:nth-child(7){ width:26%; }  /* Property Description */
 
 /* saved row */
 .row-selected{

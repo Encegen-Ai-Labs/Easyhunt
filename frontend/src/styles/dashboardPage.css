@@ -91,19 +91,29 @@
 }
 
 /* IMAGE PLACEHOLDER */
+/* IMAGE HOLDER (circle background) */
 .how-img{
-  width:110px;
-  height:110px;
-  margin:0 auto 15px;
-  background:#ffffff;
+  width:140px;
+  height:140px;
+  margin:0 auto 18px;
+   background:#f9f4f4;
+
   border-radius:50%;
+  box-shadow:0 10px 25px rgba(0,0,0,0.12);
+  padding:18px;
+
   display:flex;
   align-items:center;
   justify-content:center;
-  font-size:42px;
-  box-shadow:0 8px 20px rgba(0,0,0,0.12);
+  overflow:hidden;   /* IMPORTANT — clips image into circle */
 }
 
+/* ACTUAL IMAGE */
+.how-img img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+}
 .how-card h4{
   margin:8px 0 6px;
   font-size:17px;

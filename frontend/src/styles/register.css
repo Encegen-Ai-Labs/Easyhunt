@@ -17,6 +17,20 @@
   margin-bottom: 20px;
   font-size: 22px;
 }
+.form-error{
+  color:#e11d48;
+  font-size:13px;
+  margin-top:-6px;
+  margin-bottom:12px;
+  text-align:left;
+  padding-left:4px;
+}
+
+.register-input.error,
+.register-textarea.error{
+  border:1px solid #e11d48;
+  background:#fff5f5;
+}
 
 .register-form {
   display: flex;

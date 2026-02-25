@@ -3,6 +3,10 @@ import { authFetch } from "../auth";
 import { endpoints } from "../api";
 import "../styles/dashboardPage.css";
 import { FiDatabase, FiFileText, FiDownload } from "react-icons/fi";
+import uploadImg from "../assets/how/upload.png";
+import searchImg from "../assets/how/search.png";
+import selectImg from "../assets/how/select.png";
+import exportImg from "../assets/how/export.png";
 
 export default function Dashboard() {
 
@@ -81,50 +85,50 @@ export default function Dashboard() {
       </div>
 
       {/* HOW IT WORKS */}
-      <div className="how-section">
-        <h2 className="how-title">How it works</h2>
+ {/* HOW IT WORKS */}
+<div className="how-section">
+  <h2 className="how-title">How it works</h2>
 
-        <div className="how-grid">
+  <div className="how-grid">
 
-          <div className="how-card">
-            <div className="how-img">⬆️</div>
-            <h4>Upload</h4>
-            <p>
-              Upload your registry Excel files. System securely processes and
-              organizes the data automatically.
-            </p>
-          </div>
+    <div className="how-card">
+      <img src={uploadImg} alt="Upload" className="how-img" />
+      <h4>Upload</h4>
+      <p>
+        Upload your registry Excel files. System securely processes and
+        organizes the data automatically.
+      </p>
+    </div>
 
-          <div className="how-card">
-            <div className="how-img">🔎</div>
-            <h4>Search</h4>
-            <p>
-              Search records instantly using name, survey number or document
-              number across all uploaded data.
-            </p>
-          </div>
+    <div className="how-card">
+      <img src={searchImg} alt="Search" className="how-img" />
+      <h4>Search</h4>
+      <p>
+        Search records instantly using name, survey number or document
+        number across all uploaded data.
+      </p>
+    </div>
 
-          <div className="how-card">
-            <div className="how-img">📄</div>
-            <h4>Select Entries</h4>
-            <p>
-              Choose required records and prepare your selected list for
-              further processing.
-            </p>
-          </div>
+    <div className="how-card">
+      <img src={selectImg} alt="Select Entries" className="how-img" />
+      <h4>Select Entries</h4>
+      <p>
+        Choose required records and prepare your selected list for
+        further processing.
+      </p>
+    </div>
 
-          <div className="how-card">
-            <div className="how-img">📝</div>
-            <h4>Export to Word</h4>
-            <p>
-              Export selected data into a formatted Word document ready for
-              office use or legal documentation.
-            </p>
-          </div>
+    <div className="how-card">
+      <img src={exportImg} alt="Export" className="how-img" />
+      <h4>Export to Word</h4>
+      <p>
+        Export selected data into a formatted Word document ready for
+        office use or legal documentation.
+      </p>
+    </div>
 
-        </div>
-      </div>
-
+  </div>
+</div>
     </div>
   );
 }
