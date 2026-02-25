@@ -20,14 +20,15 @@
 
 # SQLITE DATABASE  🚨 IMPORTANT
 
-############################
-# *.db
+###########################
+*.db
 # *.sqlite
 # *.sqlite3
 # backend/database.db
 # backend/app.db
 # backend/easyhunt.db
 # instance/*.db
+backend/*.db
 
 ############################
 
